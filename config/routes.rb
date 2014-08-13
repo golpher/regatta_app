@@ -55,5 +55,5 @@ Rails.application.routes.draw do
   #   end
   
   # Default route
-  match ':controller(/:action(/:id(.:format)))'
+  match ':controller(/:action(/:id(.:format)))', via: [:post, :get]
 end
