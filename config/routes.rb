@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :demo_as
+  resources :samples
 
   resources :events
 
