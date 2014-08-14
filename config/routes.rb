@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  resources :demo_1s
-
   resources :events
 
   resources :race_types
