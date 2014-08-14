@@ -11,21 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140814012146) do
+ActiveRecord::Schema.define(version: 20140814015044) do
 
   create_table "boat_types", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
+    t.decimal  "standard_hcp"
   end
 
   create_table "boats", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "sail_number"
+    t.string   "name"
+    t.integer  "boat_types_id"
+    t.integer  "sail_id"
   end
 
   create_table "clubs", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
+    t.string   "address"
+    t.integer  "users_id"
   end
 
   create_table "demo_1s", force: true do |t|
@@ -51,21 +60,36 @@ ActiveRecord::Schema.define(version: 20140814012146) do
   create_table "events", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
+    t.string   "location"
+    t.integer  "clubs_id"
+    t.integer  "races_id"
   end
 
   create_table "race_types", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
   end
 
   create_table "races", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "boats_id"
+    t.integer  "clubs_id"
+    t.integer  "race_types_id"
+    t.date     "start_date"
+    t.time     "start_time"
+    t.date     "finish_date"
+    t.time     "finish_time"
+    t.decimal  "hcp_applied"
   end
 
   create_table "sailors", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "skipper"
+    t.string   "crew"
   end
 
   create_table "samples", force: true do |t|
@@ -79,6 +103,10 @@ ActiveRecord::Schema.define(version: 20140814012146) do
   create_table "users", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "username"
+    t.string   "email"
+    t.string   "password"
+    t.string   "salt"
   end
 
 end
