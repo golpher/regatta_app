@@ -1,0 +1,23 @@
+<h1>Listing boat_types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @boat_types.each do |boat_type| %>
+      <tr>
+        <td><%= link_to 'Show', boat_type %></td>
+        <td><%= link_to 'Edit', edit_boat_type_path(boat_type) %></td>
+        <td><%= link_to 'Destroy', boat_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Boat type', new_boat_type_path %>

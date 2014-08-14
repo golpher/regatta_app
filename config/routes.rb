@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+  resources :events
+
+  resources :race_types
+
+  resources :races
+
+  resources :boat_types
+
+  resources :sailors
+
+  resources :boats
+
+  resources :clubs
+
+  resources :users
+
   resources :demos
 
   # The priority is based upon order of creation: first created -> highest priority.
